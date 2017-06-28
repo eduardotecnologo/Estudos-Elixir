@@ -1,10 +1,20 @@
-# #Exemplo de Módulo
+# # Existem ainda funções privadas.
 # defmodule Multiplicador do
-#     def multiplique(a, b) do
-#         a * b
-#     end
+#     def multiplique(a, b \\ 2), do: soma(10, a * b)
+#     defp soma(a, b), do: a + b
 # end
-#Você também poderia criar a mesma função em uma única linha e com parâmetros pré-definidos.
+
+#Módulos Aninhados
 defmodule Multiplicador do
-    def multiplique(a, b \\ 2), do: a * b
+    defmodule Multiplique do
+       def por_dois(numero) do
+           numero * 2
+       end     
+    end
+end
+# Módulo aninhado com ponto
+defmodule Multiplicador.Multiplique do
+    def por_dois(numero) do
+        numero * 2
+    end
 end
